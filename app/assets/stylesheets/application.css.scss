@@ -11,3 +11,42 @@
  *= require_self
  *= require_tree .
  */
+
+@import "compass/reset";
+
+body {
+  color: #333;
+  font-family: bold;
+  font-size: 12px;
+}
+
+table {
+  margin-top: 15px;
+  width: 100%;
+}
+
+th {
+  font-weight: bold;
+}
+
+td, th {
+  padding: 10px;
+  border: 1px solid #eee;
+}
+
+h1 {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  font-weight: bold;
+}
+
+input[type=text] {
+  border: 1px solid #ccc;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 30px;
+  width: 640px;
+}

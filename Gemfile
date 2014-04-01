@@ -9,6 +9,7 @@ gem 'aws-sdk'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
+gem 'compass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -43,4 +44,6 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
+gem 'pry'
 # gem 'debugger', group: [:development, :test]
+

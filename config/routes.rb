@@ -1,10 +1,17 @@
 DinMikkiths::Application.routes.draw do
   resources :tasks, only: [:index, :create, :destroy]
+  resources :users, only: [:index, :create, :destroy]
+  resources :records, only: [:index, :create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'pages#index'
+
+  post 'users/login' => 'users#login'
+  post 'users/logout' => 'users#logout'
+
+  post 'records/update' => 'records#update'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

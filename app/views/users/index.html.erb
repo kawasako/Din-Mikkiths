@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h1>MyTasks</h1>
+  <h1>Users</h1>
 
   <!-- 操作が成功したときに表示する -->
   <% if notice %>
@@ -20,9 +20,9 @@
 
   <!-- 入力フォーム -->
   <div>
-    <%= form_tag({:controller => :tasks, :action => :create}, {:class => "input-append"}) do %>
-      <%= text_field_tag "task[id]", "", :id => "task_id" %>
-      <%= text_field_tag "task[name]", "", :id => "task_name" %>
+    <%= form_tag({:controller => :users, :action => :create}, {:class => "input-append"}) do %>
+      <%= text_field_tag "user[id]", "", :id => "user_id" %>
+      <%= text_field_tag "user[password]", "", :id => "user_password" %>
       <%= submit_tag "ADD", :class => "btn" %>
     <% end %>
   </div>
@@ -32,22 +32,22 @@
     <table class="table table-striped table-bordered">
       <tbody>
         <tr>
-          <th>Name</th>
+          <th>Id</th>
           <th>CreatedAt</th>
           <th>UpdatedAt</th>
-          <th>Done</th>
+          <th>Delete</th>
         </tr>
-        <% @tasks.each do |task| %>
+        <% @users.each do |user| %>
           <tr>
-            <td><%= task.name %></td>
+            <td><%= user.id %></td>
             <td class="span3">
-              <%= task.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+              <%= user.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
             </td>
             <td class="span3">
-              <%= task.updated_at.strftime('%Y/%m/%d %H:%M:%S') %>
+              <%= user.updated_at.strftime('%Y/%m/%d %H:%M:%S') %>
             </td>
             <td class="span1">
-              <%= button_to 'Done', { :action => "destroy", :id => task.id }, method: :delete, class: 'btn btn-small btn-primary' %>
+              <%= button_to 'Delete', { :action => "destroy", :id => user.id }, method: :delete, class: 'btn btn-small btn-primary' %>
             </td>
           </tr>
         <% end %>

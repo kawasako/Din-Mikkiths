@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Welcome!</h1>
+
+  <!-- 入力フォーム -->
+  <div>
+    <%= form_tag({:controller => :users, :action => :login}, {:class => "input-append"}) do %>
+      <%= text_field_tag "user[id]", "", :id => "user_id" %>
+      <%= text_field_tag "user[password]", "", :id => "user_password" %>
+      <%= submit_tag "Login", :class => "btn" %>
+    <% end %>
+  </div>
+</div>
