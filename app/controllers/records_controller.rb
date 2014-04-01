@@ -3,6 +3,7 @@ class RecordsController < ApplicationController
   skip_before_filter :verify_authenticity_token ,:only=>[:update]
 
   def index
+    # Record.create_table 1, 1, { :hash_key => { :id => :string }, :range_key => { :time => :string } }
     if session[:user_id].blank?
       redirect_to :root
       return

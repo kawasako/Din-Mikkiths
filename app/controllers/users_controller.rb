@@ -30,8 +30,10 @@ class UsersController < ApplicationController
   def destroy
     user = User.find_by_id(params[:id])
     for record_id in user.has_records do
-      record = Record.find_by_id(record_id)
-      record.delete
+      unless record_id == "nill"
+        record = Record.find_by_id(record_id)
+        record.delete
+      end
     end
 
     user.delete
